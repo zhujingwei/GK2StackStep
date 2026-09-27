@@ -2,7 +2,7 @@
 
 下面是可以直接复制粘贴到 Nexus 上传页的内容。上传步骤和检查清单在最下面。
 
-**待补**：发布包（`dist/GK2StackStep-1.0.0.zip`）、首图。
+**待补**：首图。
 
 ---
 
@@ -121,7 +121,7 @@ Source code and build instructions: https://github.com/zhujingwei/GK2StackStep (
 
 ## 上传前检查清单
 
-1. **主文件**：上传 `dist/GK2StackStep-1.0.0.zip`（内部结构：`BepInEx/plugins/GK2StackStep.dll`，Vortex 可直接部署）。**还没打**——用 `tools/makezip.ps1` 生成（参数是数组：`-Source` / `-EntryName` / `-Destination`，必须用 `powershell -Command "& '.\tools\makezip.ps1' ..."` 调用，`-File` 不会把逗号拆成数组）。
+1. **主文件**：`dist/GK2StackStep-1.0.0.zip` —— **已生成**：8634 字节，SHA256 `A5F094CB80ACA7406AAF03DAA2C26E8CB4F8FC07CCF0F4FE4D5F9BD246F39B8B`。内部只有一项 `BepInEx/plugins/GK2StackStep.dll`（17408 字节，SHA256 `f0576a1028ff4fdb…b8fec5`），Vortex 可直接部署。重新打包用 `tools/makezip.ps1`（工作区那份是单文件版：`-Source` / `-EntryName`（**必须用正斜杠**）/ `-Destination`，脚本会解包回验 SHA256；若换用参数为数组的版本，注意 `powershell -File` 不会把 `a,b` 拆成数组，要改用 `-Command "& '...' -Source 'x','y'"`）。
 2. **游戏页**：Graveyard Keeper 2（Steam app id 4358690，Nexus 上选游戏时不要选成一代 Graveyard Keeper）。
 3. **License / permissions**：**MIT** —— 仓库里已有 `LICENSE`（建 GitHub 仓库时生成的，Copyright (c) 2026 wergel）。Nexus 上传时选 MIT。
 4. **图片**：Nexus 页面首图不是必填但强烈建议（1600×900 或相近 16:9）。**可以截「数量窗口 + 底部提示行」的画面**，一眼就能说明这个 mod 干什么。需要的话可以让我生成一张标题图。
